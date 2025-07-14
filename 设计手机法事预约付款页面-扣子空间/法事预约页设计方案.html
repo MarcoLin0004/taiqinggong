@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法事活动预约</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .animate-pulse-slow {
+            animation: pulse 2s infinite;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F5D78E 100%);
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F5D78E 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .step-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .step-line {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, #1E3A8A, #3B82F6);
+            margin-left: 14px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="max-w-md mx-auto bg-white shadow-lg overflow-hidden">
+        <!-- 顶部横幅 -->
+        <div class="bg-blue-900 text-white p-6 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-0 w-32 h-32 rounded-full bg-yellow-400 opacity-30 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-40 h-40 rounded-full bg-yellow-400 opacity-30 transform translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            <h1 class="text-2xl font-bold mb-2 relative z-10 gold-text">祈福法会预约</h1>
+            <p class="text-blue-100 relative z-10">诚心祈福 · 福慧双修</p>
+        </div>
+
+        <!-- 活动介绍 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="flex items-start mb-4">
+                <div class="step-indicator">1</div>
+                <div>
+                    <h2 class="text-xl font-bold text-blue-900">活动介绍</h2>
+                    <p class="text-gray-600 mt-2">本次祈福法会由XX寺住持亲自主持，包含诵经祈福、消灾延寿、超度亡灵等庄严仪式，诚邀十方善信共襄盛举。</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-4 mt-4">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-calendar-alt text-blue-700 mr-2"></i>
+                    <span class="font-medium text-blue-900">时间：</span>
+                    <span class="text-gray-700 ml-1">2023年12月15日 09:00-16:00</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-blue-700 mr-2"></i>
+                    <span class="font-medium text-blue-900">地点：</span>
+                    <span class="text-gray-700 ml-1">XX寺大雄宝殿</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 预约表单 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="flex items-start">
+                <div class="step-indicator">2</div>
+                <div>
+                    <h2 class="text-xl font-bold text-blue-900">预约信息</h2>
+                </div>
+            </div>
+            <div class="step-line"></div>
+
+            <form class="mt-4 space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-1">姓名</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="请输入真实姓名">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">电话</label>
+                    <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="请输入联系电话">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">预约日期</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">请选择预约日期</option>
+                        <option value="2023-12-15">2023年12月15日</option>
+                        <option value="2023-12-16">2023年12月16日</option>
+                    </select>
+                </div>
+                <button type="button" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-4 rounded-lg font-medium transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-check-circle mr-2"></i> 确认预约
+                </button>
+            </form>
+        </div>
+
+        <!-- 微信支付 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="flex items-start">
+                <div class="step-indicator">3</div>
+                <div>
+                    <h2 class="text-xl font-bold text-blue-900">微信支付</h2>
+                </div>
+            </div>
+            <div class="step-line"></div>
+
+            <div class="mt-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md inline-block animate-pulse-slow">
+                    <img src="https://s.coze.cn/image/o0LEgfilrbc/" alt="微信支付二维码" class="w-40 h-40 mx-auto">
+                    <p class="text-gray-600 mt-2">请使用微信扫描二维码完成支付</p>
+                </div>
+                
+                <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 text-left">
+                    <p class="text-yellow-800 flex items-start">
+                        <i class="fas fa-info-circle mr-2 mt-1"></i>
+                        <span>支付成功后请截图保存支付凭证，并添加客服微信确认预约</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 客服微信 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.7s;">
+            <div class="flex items-start">
+                <div class="step-indicator">4</div>
+                <div>
+                    <h2 class="text-xl font-bold text-blue-900">添加客服微信</h2>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                    <img src="https://s.coze.cn/image/q8YeYkWizA4/" alt="客服微信二维码" class="w-40 h-40 mx-auto">
+                    <p class="text-gray-600 mt-2">请添加客服微信确认预约</p>
+                </div>
+                
+                <div class="mt-6 bg-blue-50 rounded-lg p-4">
+                    <h3 class="font-medium text-blue-900 mb-2">确认预约步骤：</h3>
+                    <ol class="text-left text-gray-700 space-y-2 pl-4">
+                        <li>1. 支付成功后截图保存支付凭证</li>
+                        <li>2. 扫描上方二维码添加客服微信</li>
+                        <li>3. 发送支付凭证截图和预约信息</li>
+                        <li>4. 等待客服确认预约成功</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="bg-gray-100 p-4 text-center text-gray-500 text-sm">
+            <p>created by <a href="https://space.coze.cn" class="text-blue-600 hover:underline">coze space</a></p>
+            <p>页面内容均由 AI 生成，仅供参考</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 表单提交交互
+            const form = document.querySelector('form');
+            const submitBtn = form.querySelector('button[type="button"]');
+            
+            submitBtn.addEventListener('click', function() {
+                const inputs = form.querySelectorAll('input, select');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.classList.add('border-red-500');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (isValid) {
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> 处理中...';
+                    submitBtn.disabled = true;
+                    
+                    // 模拟表单提交
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> 预约成功';
+                        submitBtn.classList.remove('bg-blue-900', 'hover:bg-blue-800');
+                        submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                        
+                        // 滚动到支付区域
+                        document.querySelector('[style="animation-delay: 0.5s;"]').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }, 1500);
+                }
+            });
+            
+            // 输入框获取焦点时效果
+            const inputFields = document.querySelectorAll('input, select');
+            inputFields.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.querySelector('label').classList.add('text-blue-700');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.querySelector('label').classList.remove('text-blue-700');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

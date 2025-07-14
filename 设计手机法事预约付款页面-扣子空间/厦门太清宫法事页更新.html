@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厦门太清宫法事活动预约</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .animate-pulse-slow {
+            animation: pulse 2s infinite;
+        }
+        .step-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9F1239 0%, #E11D48 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .step-line {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, #9F1239, #E11D48);
+            margin-left: 14px;
+        }
+        .official-badge {
+            background: linear-gradient(135deg, #9F1239 0%, #E11D48 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 min-h-screen">
+    <div class="max-w-md mx-auto bg-white shadow-lg overflow-hidden">
+        <!-- 顶部横幅 -->
+        <div class="bg-gradient-to-r from-red-900 to-pink-700 text-white p-6 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-0 w-32 h-32 rounded-full bg-pink-400 opacity-30 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-40 h-40 rounded-full bg-pink-400 opacity-30 transform translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            <h1 class="text-2xl font-bold mb-2 relative z-10">祈福法会预约</h1>
+            <p class="text-pink-100 relative z-10">诚心祈福 · 福慧双修</p>
+        </div>
+
+        <!-- 活动介绍 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="official-badge">
+                <i class="fas fa-check-circle mr-2"></i>厦门太清宫官方主办
+            </div>
+            <div class="flex items-start mb-4">
+                <div class="step-indicator">1</div>
+                <div>
+                    <h2 class="text-xl font-bold text-red-900">活动介绍</h2>
+                    <p class="text-gray-700 mt-2">本次祈福法会由厦门太清宫道长亲自主持，包含诵经祈福、消灾延寿、超度亡灵等庄严仪式，诚邀十方善信共襄盛举。</p>
+                </div>
+            </div>
+
+            <div class="bg-pink-100 rounded-lg p-4 mt-4">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-calendar-alt text-red-700 mr-2"></i>
+                    <span class="font-medium text-red-900">时间：</span>
+                    <span class="text-gray-700 ml-1">2025年7月20日 09:00-16:00</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-red-700 mr-2"></i>
+                    <span class="font-medium text-red-900">地点：</span>
+                    <span class="text-gray-700 ml-1">厦门太清宫大殿</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 预约表单 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="flex items-start">
+                <div class="step-indicator">2</div>
+                <div>
+                    <h2 class="text-xl font-bold text-red-900">预约信息</h2>
+                </div>
+            </div>
+            <div class="step-line"></div>
+
+            <form class="mt-4 space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-1">姓名</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="请输入真实姓名">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">电话</label>
+                    <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="请输入联系电话">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">预约日期</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500">
+                        <option value="">请选择预约日期</option>
+                        <option value="2025-07-20">2025年7月20日</option>
+                        <option value="2025-07-21">2025年7月21日</option>
+                    </select>
+                </div>
+                <button type="button" class="w-full bg-red-900 hover:bg-red-800 text-white py-3 px-4 rounded-lg font-medium transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-check-circle mr-2"></i> 确认预约
+                </button>
+            </form>
+        </div>
+
+        <!-- 微信支付 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="flex items-start">
+                <div class="step-indicator">3</div>
+                <div>
+                    <h2 class="text-xl font-bold text-red-900">支付方式</h2>
+                </div>
+            </div>
+            <div class="step-line"></div>
+
+            <div class="mt-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md inline-block animate-pulse-slow">
+                    <img src="微信图片_2025-07-14_160550_653.jpg" alt="收款二维码" class="w-40 h-40 mx-auto">
+                    <p class="text-gray-700 mt-4 text-sm">
+                        福生无量，请长按此图片识别图中二维码并进行支付，为了您能及时登记，请您将支付成功的截图发送至"大赤太清"微信号（支持微信、支付宝）
+                    </p>
+                </div>
+                
+                <div class="mt-6 bg-pink-100 border-l-4 border-red-500 p-4 text-left">
+                    <p class="text-red-800 flex items-start">
+                        <i class="fas fa-info-circle mr-2 mt-1"></i>
+                        <span>支付成功后请长按二维码截图保存支付凭证，并发送至"大赤太清"微信号确认预约</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 客服微信 -->
+        <div class="p-6 animate-fade-in" style="animation-delay: 0.7s;">
+            <div class="flex items-start">
+                <div class="step-indicator">4</div>
+                <div>
+                    <h2 class="text-xl font-bold text-red-900">添加客服微信</h2>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                    <img src="微信图片_2025-07-14_160550_653.jpg" alt="大赤太清微信号二维码" class="w-40 h-40 mx-auto">
+                    <p class="text-gray-700 mt-2">请添加"大赤太清"微信号确认预约</p>
+                </div>
+                
+                <div class="mt-6 bg-pink-100 rounded-lg p-4">
+                    <h3 class="font-medium text-red-900 mb-2">确认预约步骤：</h3>
+                    <ol class="text-left text-gray-700 space-y-2 pl-4">
+                        <li>1. 支付成功后长按二维码截图保存支付凭证</li>
+                        <li>2. 扫描上方二维码添加"大赤太清"微信</li>
+                        <li>3. 发送支付凭证截图和预约信息</li>
+                        <li>4. 等待客服确认预约成功</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="bg-pink-100 p-4 text-center text-gray-500 text-sm">
+            <p>created by <a href="https://space.coze.cn" class="text-red-600 hover:underline">coze space</a></p>
+            <p>页面内容均由 AI 生成，仅供参考</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 表单提交交互
+            const form = document.querySelector('form');
+            const submitBtn = form.querySelector('button[type="button"]');
+            
+            submitBtn.addEventListener('click', function() {
+                const inputs = form.querySelectorAll('input, select');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.classList.add('border-red-500');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (isValid) {
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> 处理中...';
+                    submitBtn.disabled = true;
+                    
+                    // 模拟表单提交
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> 预约成功';
+                        submitBtn.classList.remove('bg-red-900', 'hover:bg-red-800');
+                        submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                        
+                        // 滚动到支付区域
+                        document.querySelector('[style="animation-delay: 0.5s;"]').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }, 1500);
+                }
+            });
+            
+            // 输入框获取焦点时效果
+            const inputFields = document.querySelectorAll('input, select');
+            inputFields.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.querySelector('label').classList.add('text-red-700');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.querySelector('label').classList.remove('text-red-700');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
